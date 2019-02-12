@@ -1,0 +1,1 @@
+Docker image of zabbix server that supported https://github.com/v-zhuravlev/zabbix-notify
