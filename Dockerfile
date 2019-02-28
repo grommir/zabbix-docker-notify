@@ -1,6 +1,6 @@
 FROM zabbix/zabbix-server-mysql:centos-4.0-latest
 
-RUN yum install epel-release -y \
+RUN yum install epel-release lftp -y \
 && yum install perl-JSON-XS perl-libwww-perl perl-LWP-Protocol-https perl-parent git  -y \
 && yum install perl-ExtUtils-MakeMaker perl-Test-Simple perl-Test-Exception -y \
 && git clone https://github.com/v-zhuravlev/zabbix-notify.git \
