@@ -1,4 +1,4 @@
-FROM zabbix/zabbix-server-mysql:centos-4.0-latest
+FROM zabbix/zabbix-server-mysql:centos-4.2-latest
 
 RUN yum install epel-release lftp jq -y \
 && yum install perl-JSON-XS perl-libwww-perl perl-LWP-Protocol-https perl-parent git  -y \
