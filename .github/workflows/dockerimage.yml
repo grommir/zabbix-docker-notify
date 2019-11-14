@@ -12,10 +12,9 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag docker.pkg.github.com/grommir/zabbix-docker-notify/zabbix-docker-notify:$GITHUB_SHA
-    - uses: azure/docker-login@v1
-      with:
-        login-server: docker.pkg.github.com
-        username: grommir
-        password: ""
+    - name: login
+      run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish
       run: docker push docker.pkg.github.com/grommir/zabbix-docker-notify/zabbix-docker-notify:$GITHUB_SHA
