@@ -1,6 +1,10 @@
 FROM zabbix/zabbix-server-mysql:centos-4.4.5
 
-RUN yum install epel-release lftp jq bind-utils -y \
+COPY ["docker-entrypoint.sh", "/usr/bin/"]
+RUN chmod +x /usr/bin/docker-entrypoint.sh
+
+RUN yum install epel-release lftp bind-utils -y \
+&& yum install jq -y \
 && yum install perl-JSON-XS perl-libwww-perl perl-LWP-Protocol-https perl-parent git  -y \
 && yum install perl-ExtUtils-MakeMaker perl-Test-Simple perl-Test-Exception -y \
 && git clone https://github.com/v-zhuravlev/zabbix-notify.git \
