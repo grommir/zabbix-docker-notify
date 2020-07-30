@@ -1,7 +1,5 @@
 FROM zabbix/zabbix-server-mysql:centos-5.0.2
 
-RUN chmod +x /usr/bin/docker-entrypoint.sh
-
 RUN yum install epel-release lftp bind-utils -y \
 && yum install jq -y \
 && yum install perl-JSON-XS perl-libwww-perl perl-LWP-Protocol-https perl-parent git  -y \
