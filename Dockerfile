@@ -1,6 +1,5 @@
-FROM zabbix/zabbix-server-mysql:centos-4.4.5
+FROM zabbix/zabbix-server-mysql:centos-5.0.2
 
-COPY ["docker-entrypoint.sh", "/usr/bin/"]
 RUN chmod +x /usr/bin/docker-entrypoint.sh
 
 RUN yum install epel-release lftp bind-utils -y \
