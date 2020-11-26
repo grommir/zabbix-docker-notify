@@ -2,7 +2,9 @@ FROM zabbix/zabbix-server-mysql:centos-5.2.1
 
 USER root
 
-RUN yum install epel-release lftp bind-utils -y \
+RUN \
+yum config-manager --set-enabled PowerTools \
+yum install epel-release lftp bind-utils -y \
 && yum install jq -y \
 && yum install perl-JSON-XS perl-libwww-perl perl-LWP-Protocol-https perl-parent git  -y \
 && yum install perl-ExtUtils-MakeMaker perl-Test-Simple perl-Test-Exception -y \
