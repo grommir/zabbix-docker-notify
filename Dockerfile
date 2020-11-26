@@ -1,4 +1,4 @@
-FROM zabbix/zabbix-server-mysql:centos-5.0.2
+FROM zabbix/zabbix-server-mysql:centos-5.2.1
 
 USER root
 
