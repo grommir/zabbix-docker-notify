@@ -3,6 +3,7 @@ FROM zabbix/zabbix-server-mysql:centos-5.2.1
 USER root
 
 RUN \
+yum install dnf-plugins-core \
 yum config-manager --set-enabled PowerTools \
 yum install epel-release lftp bind-utils -y \
 && yum install jq -y \
