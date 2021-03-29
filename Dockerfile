@@ -4,7 +4,7 @@ USER root
 
 RUN \
 yum install dnf-plugins-core -y \
-&& yum config-manager --set-enabled PowerTools \
+&& yum config-manager --set-enabled powertools \
 && yum install epel-release lftp bind-utils -y \
 && yum install jq -y \
 && yum install perl-JSON-XS perl-libwww-perl perl-LWP-Protocol-https perl-parent git  -y \
